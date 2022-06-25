@@ -2,6 +2,7 @@ const express = require ('express');
 const path = require ('path');
 const webpack = require('webpack')
 const fs = require ('fs');
+// const db = require ('./')
 
 // initialize port to localhost 3000
 const port = 3000;
@@ -11,7 +12,7 @@ const app = express();
 
 // send get request to index.html
 
-app.get('/', (req, res) => {
+app.get('/main', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../../dist/index.html'));
 })
 
