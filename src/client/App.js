@@ -1,9 +1,12 @@
 import React from "react";
+import NavMenu from "./NavMenu.js"
+
 
 const App = () => {
     return (
         <div className="app">
-            <a>TaskMaster</a> 
+            <h1>TaskMaster</h1> 
+            <NavMenu />
         </div>   
     )
 };
