@@ -8,6 +8,7 @@ const TaskContainer = () => {
     //set a sub-task state
     const [subTask, setSubTask] = useState('');
 
+
     //fetch for data from database, then use it to set state
     useEffect(() => {
 
@@ -20,6 +21,7 @@ const TaskContainer = () => {
     return (
         <div>
             <MainTask/>
+            <TastList task={task} subTask={subTask}/>
         </div>
     )
 
