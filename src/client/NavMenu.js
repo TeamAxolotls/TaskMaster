@@ -10,6 +10,7 @@ import flag from "../img/flag.png"
 
 const NavMenu = () => {
     return (
+        <div>
         <div className="sidenav">   
             <div className="user-nav">
                 <p id="username">Michael</p>
@@ -19,6 +20,8 @@ const NavMenu = () => {
             <a href="#">Priority<img src={star} id="priority" height="30px" className="nav-icons"></img></a>
             <a href="#">Tags<img src={tag} id="tag" height="29px" className="nav-icons"></img></a>
             <a href="#">Flagged<img src={flag} id="flag" height="26px" className="nav-icons"></img></a>
+        </div>
+        <TaskContainer/>
         </div>
     )
 }
