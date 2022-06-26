@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 body{
     margin: 0;
@@ -8,14 +8,14 @@ body{
 }
 .sidenav {
     height: 100%;
-    width: 285px;
+    width: 280px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #343434, #535353);
+    background: linear-gradient(40deg, #343434, #535353);
     overflow-x: hidden;
-    padding-top: 22px;
+    /* padding-top: 22px; */
     font-weight: 300;
     /* display: flex; */
   }
@@ -23,7 +23,7 @@ body{
   .sidenav a {
     padding: 6px 6px 40px 32px;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 19px;
     color: #e1e1e1;
     display: flex;
     align-items: center;
@@ -33,22 +33,50 @@ body{
     color: #efefef;
   }
 
-  .user-nav{
-    padding: 50px 0px 40px 0px;
+  .logo{
+    padding: 0px 0px 40px 0px;
     display: flex;
-  
+    align-items: center;
+    margin-left: 30px;
+    /* background-color: #343434; */
+  }
+
+  #main-logo{
+    font-family: 'Alata', sans-serif;
+    padding-left: 10px;
+    /* margin-left: 10px; */
+    font-size: 24px;
+    color: rgb(243, 242, 242);
+  }
+  .topnav{
+    background: linear-gradient(100deg, #595959, #343434);
+    width: auto;    
+    height: 90px;
+    /* padding-top: 20px; */
+  }
+  #user-section{
+    /* padding: 0px 0px 400px 0px; */
+    /* margin-left: 300px; */
+    margin-right: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 22px;
+  }
+  #grid{
+    padding-right: 20px;
   }
 
   #user-photo{
     display: inline;
     border-radius: 100%;
   }
-  #username{
+  /* #username{
     display: inline;
     padding: 6px 70px 16px 32px;
-    font-size: 21px;
+    font-size: 20px;
     color:  #e1e1e1;
-  }
+  } */
 
   #priority{
     margin-left: 100px;
@@ -65,8 +93,27 @@ body{
 
   .tasks-container{
     margin-left: 293px;
-    width: 800px;
+    margin-top: 6px;
+    width: 700px;
     height: auto;
     background: rgb(241, 241, 241);
     border-radius: 11px;
+  }
+  .main-task{
+    /* margin: 30px; */
+    display: grid;
+    grid-template-columns: 600px 70px;
+    padding: 20px;
+    font-weight:500;
+  }
+  #check-circle{
+    border: none;
+    background-color: rgb(241, 241, 241);
+  }
+  #main-task-container{
+    /* padding: 20px 20px 20px 20px;
+    margin: 20px; */
+  }
+  #check-button:hover{
+    cursor: pointer;
   }

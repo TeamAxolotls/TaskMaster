@@ -1,6 +1,8 @@
 import React from "react";
-import circle from "../img/circle.png";
+import uncompleted from "../img/circle.png";
 import completed from "../img/circlegreencheck.png"
+import { useState } from "react";
+const checks = {uncompleted, completed};
 
 const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1},{taskItem: "Pack for vacation to SF", highlight: false, identifier: 2} ];
 const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Create ad and post to craigslist']}, {pointer: 2, tasks: ["Do laundry and choose clothes", "Go shopping for travel items", "Buy plane ticket"]}];
@@ -14,21 +16,31 @@ const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Creat
 
 const TaskList = () => {
 
+    const [check, setCheck] = useState(checks.uncompleted);
+
+    function complete() {
+        if (check === checks.completed) {
+            setCheck(checks.uncompleted)
+        } else {
+            setCheck(checks.completed)
+        }
+    };
+    // ()=> setCheck(checks.completed)
     const mainTasks = task.map(obj => {
         return (
             <div className="tasks-container">   
-                <div>{obj.taskItem}</div>
-                <img src={completed} height="30px"></img>
+                <div className="main-task">{obj.taskItem}<button id="check-circle" onClick={() => complete()}>
+                    <img src={check} height="30px" id="check-button"></img></button>        
+                </div>
             </div>
-        
-        
+
         )
     })
 
 console.log(mainTasks)
     
     return (
-        <div>   
+        <div id="main-task-container">   
         { mainTasks }
         </div>
     )
