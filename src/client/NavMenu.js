@@ -7,6 +7,7 @@ import tag from "../img/tag.png";
 import flag from "../img/flag.png";
 import logo from "../img/taskmasterlogo.png";
 import grid from "../img/grid.png";
+import completed from "../img/completed.png";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -22,10 +23,11 @@ const NavMenu = () => {
                 <img src={logo} id="main-logo" height="60px"></img>
                 <p id="main-logo">TaskMaster</p>
             </div>   
-            <a href="#">Projects<img src={folder} id="folder" height="25px" className="nav-icons"></img></a>
-            <a href="#">Priority<img src={star} id="priority" height="30px" className="nav-icons"></img></a>
-            <a href="#">Tags<img src={tag} id="tag" height="29px" className="nav-icons"></img></a>
-            <a href="#">Flagged<img src={flag} id="flag" height="26px" className="nav-icons"></img></a>
+            <a href="#" id="tasks-div">Tasks<img src={folder} id="folder" height="23px" className="nav-icons"></img></a>
+            <a href="#" id="priority-div">Priority<img src={star} id="priority" height="30px" className="nav-icons"></img></a>
+            <a href="#" id="tags-div">Tags<img src={tag} id="tag" height="27px" className="nav-icons"></img></a>
+            <a href="#" id="flagged-div">Flagged<img src={flag} id="flag" height="24px" className="nav-icons"></img></a>
+            <a href="#" id="done-div">Done<img src={completed} id="completed-logo" height="26px" className="nav-icons"></img></a>
         </div>
         <div className="topnav">
             <div id="user-section">
