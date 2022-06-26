@@ -10,7 +10,9 @@ const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1},
 ];
 const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Create ad and post to craigslist']}, {pointer: 2, tasks: ["Do laundry and choose clothes", "Go shopping for travel items", "Buy plane ticket"]}];
 
-// props.task and props.subtask
+const testArr = ['Look up current value of computer', 'Create ad and post to craigslist'];
+
+
 //Map out the main tasks, and create a div for each one. Inside each one, need to map through corresponding subtask array.
 
 // Want to deconstruction task, and subtask
@@ -21,52 +23,53 @@ const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Creat
 
 const TaskList = () => {
 
-    const [check, setCheck] = useState(checks.uncompleted);
 
-    function complete() {
-        if (check === checks.completed) {
-            setCheck(checks.uncompleted)
-        } else {
-            setCheck(checks.completed)
-        }
-    };
-    // ()=> setCheck(checks.completed)
+    // Function to render subtasks
+
+        // const subtaskArr = subtask.map(obj => {
+        //     return obj.tasks
+        //     });
+
+        // const subtaskDivs = [];
+        
+        // for (let i = 0; i < subtaskArr.length; i++) {
+        //     subtaskDivs.push(<li>{subtaskArr[i]}</li>)
+        // }
+        // console.log(subtasksDivs)
+    
+
+    // Function to render main tasks
+
     const mainTasks = task.map(obj => {
+            // Sub Function to change the check box image
+        const [check, setCheck] = useState(checks.uncompleted);
+
+        function complete() {
+            if (check === checks.completed) {
+                setCheck(checks.uncompleted)
+            } else {
+                setCheck(checks.completed)
+            }
+        };
         return (
             <div className="tasks-container">   
-                <div className="main-task">{obj.taskItem}<button id="check-circle" onClick={() => complete()}>
+                <div className="main-task">{obj.taskItem}<button id="check-circle" onClick={() => complete()} key={obj.identifier}>
                     <img src={check} height="30px" id="check-button"></img></button>        
+                </div>
+                <div className="sub-tasks">
+                     {/* {subtaskDivs} */}
                 </div>
             </div>
 
         )
     });
 
-    // const subTasks = subTask.forEach(obj => {
-    //     obj.map(arr => {
-    //         return (
-    //             <div className="subtask-container">   
-    //                 {subtask.tasks}
-
-    //             </div>
-    //         )
-    //     })
-    // })
-    
-    // const subTasks = subtask.map(obj => {
-    //     return (
-    //         <div className="subtask-container">   
-    //             {subtask.tasks}
-    //         </div>
-    //     )
-    // })
-
-console.log(mainTasks)
+// console.log(mainTasks)
     
     return (
         <div id="main-task-container">   
         { mainTasks }
-        {/* { subTasks } */}
+
         </div>
     )
 }

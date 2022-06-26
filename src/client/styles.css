@@ -13,7 +13,8 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background: linear-gradient(40deg, #343434, #535353);
+    /* background: linear-gradient(40deg, #343434, #535353); */
+    background-color: rgb(58,58,58);
     overflow-x: hidden;
     /* padding-top: 22px; */
     font-weight: 300;
@@ -48,9 +49,11 @@ body{
     font-size: 24px;
     color: rgb(243, 242, 242);
   }
+  /* background: linear-gradient(100deg, #595959, #343434); */
   .topnav{
-    background: linear-gradient(100deg, #595959, #343434);
-    width: auto;    
+    background: linear-gradient(45deg,rgb(58, 58, 58), rgb(93, 93, 93));
+    /* width: auto;     */
+    margin-left: 280px;
     height: 90px;
     /* padding-top: 20px; */
   }
@@ -94,37 +97,36 @@ body{
     margin-left: 119px;
   }
 
-  
   /* sidebar nav focus and hover effects */
 #tasks-div:hover{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #tasks-div:focus{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #priority-div:hover{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #priority-div:focus{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #tags-div:hover{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #tags-div:focus{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #flagged-div:hover{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #flagged-div:focus{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #done-div:hover{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 #done-div:focus{
-    background: linear-gradient(200deg, rgb(68, 68, 68),rgb(56, 55, 55));
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
 }
 
 

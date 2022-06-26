@@ -36,8 +36,11 @@ const NavMenu = () => {
                 <a href="#"> <img src={userPhoto} id="user-photo" height="40px"></img> </a>          
             </div>
  
-        </div>
+        </div >
+        <div  id="main-task-container">
         <TaskContainer/>
+        </div>
+
         </div>
     )
 }
