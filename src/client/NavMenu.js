@@ -7,8 +7,20 @@ import flag from "../img/flag.png"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faStar } from '@fortawesome/free-solid-svg-icons'
 {/* <FontAwesomeIcon icon="fa-solid fa-star-sharp" /> */}
+import TaskContainer from './TaskContainer'
+import {useState} from 'react';
 
 const NavMenu = () => {
+
+    const [currentPage, setCurrentPage] = useState('prjects')
+
+    // setCurrentPage = () => {
+    //     if (currentPage === 'projects'){
+    //         return (<TaskContainer/>)
+    //     }
+    
+    // }
+
     return (
         <div>
         <div className="sidenav">   
@@ -25,5 +37,8 @@ const NavMenu = () => {
         </div>
     )
 }
+
+
+
 
 export default NavMenu;
