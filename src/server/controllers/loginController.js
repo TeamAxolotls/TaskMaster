@@ -10,9 +10,12 @@ const loginController = {
     //this should send the created user 
     createUser(req, res, next) {
       const {username, password} = req.body;
+      console.log(username, password);
+
       dbModel.create({ username, password })
       .then((data) => {
           res.locals.user = data;
+          console.log(data);
           return next();
         })
         .catch(err => {
@@ -23,5 +26,6 @@ const loginController = {
         })
     }
 }
+
 
 module.exports = loginController;

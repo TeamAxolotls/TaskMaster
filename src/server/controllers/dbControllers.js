@@ -11,26 +11,32 @@ const manageToDo = {
   // it would be nice to have one crud method for lists, list items, and sub lists and sub list items.
   // for now, making seperate methods. 
   createTodoTask(req, res, next) {
-    
+    // const todoTaskSchema = new mongoose.Schema({
+    //   username: String,
+    //   password: String,
+    //   task: [
+    //       {
+    //               taskItem: String,
+    //               highlight: {type: Boolean, default: false},
+    //               identifier: Number,
+          
+    //       }],
+    //   subTask: [
+    //       {
+    //           pointer: Number,
+    //           tasks: Array,
+    //       },
     // Q: how to destructure nested items in db?
     // A: destructure just mimics object structure. 
-    const { task: [ { taskItem: {type: todoName, highlight, identifier} } ] } = req.body;
-
+    const { username, password, task: [ { taskItem, highlight, identifier} ] } = req.body;
     // nested destructure test: WORKING
     // console.log(type)
     // console.log(highlight)
     // console.log(identifier)
 
-    // is this needed? No
-    const newTask = {
-      todoName,
-      highlight,
-      identifier,
-    };
-
     // create new task in database.
     // access properties on taskItem in database. 
-    dbModel.create({ todoName, highlight, identifier })
+    dbModel.create({ "username": username, "password": password})
     .then((data) => {
       res.locals.todoTask = data;
       return next();
@@ -77,13 +83,15 @@ const manageToDo = {
     // <<<!!!>>> make sure taskName is alias variable name that points to edited value, not existing property on taskItem. 
     const { task: [ { taskItem: taskName } ] } = req.body;
 
-    // update task in database
-    dbModel.updateOne({ taskItem: taskName })
-    .then((data) => {
-      // send task to be updated on response locals object. 
-      res.locals.taskName = data;
-      return next();
-    })
+    
+    
+    dbModel.findOneAndUpdate({ task: [{ taskItem: taskName } ]}, {task: [ { taskItem: newTask }]},
+      { new: true })
+      .then((data) => {
+          // send task to be updated on response locals object. 
+          res.locals.taskName = data;
+          return next();
+      })
     .catch(err => {
       return next({
         log: 'ERROR: editTask',
@@ -91,7 +99,13 @@ const manageToDo = {
       })
     })
   },
-
+    // // update task in database
+    // dbModel.updateOne({ taskItem: taskName })
+    // .then((data) => {
+    //   // send task to be updated on response locals object. 
+    //   res.locals.taskName = data;
+    //   return next();
+    // })
   delTodoTask(req, res, next) {
 
     const { task: [ { taskItem: taskName } ] } = req.body;

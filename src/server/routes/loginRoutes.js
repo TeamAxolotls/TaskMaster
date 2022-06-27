@@ -6,8 +6,9 @@ const loginRouter = express.Router();
 // userRouter.get('/', loginController.createUser, (req, res, next) => {
 //   return res.status(200).json(res.locals.user);
 // })
-
-loginRouter.post('/main', loginController.createUser, (req, res, next) => {
+//3000/main/
+loginRouter.post('/', loginController.createUser, (req, res, next) => {
     return res.status(200).json(res.locals.user);
 })
 
+module.exports = loginRouter;

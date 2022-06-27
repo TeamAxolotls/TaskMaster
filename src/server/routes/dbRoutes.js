@@ -14,23 +14,41 @@ const dbControllers = require('../controllers/dbControllers.js');
 
 // toDo list routes
 // is main the correct uri?
-dbRouter.post('/main', dbControllers.createTodoTask, (req, res, next) => {
+dbRouter.post('/', dbControllers.createTodoTask, (req, res, next) => {
   // on request, send the parsed data to the database. 
   return res.status(200).json(res.locals.todoTask);
 })
+//redirect to new page 
 
 // what is the right uri to retrieve tasks for a specific user?
 // would it still be user or would it be todolist?
 // might be /main/user/:todolist
-dbRouter.get('/main', dbControllers.getTodoAll, (req, res, next) => {
+dbRouter.get('/', dbControllers.getTodoAll, (req, res, next) => {
   return res.status(200).json(res.locals.todolist);
 })
 
-dbRouter.put('/main/:taskName', dbControllers.editTodoTask, (req, res, next) => {
+dbRouter.put('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
   return res.status(200).json(res.locals.taskName);
-})
+  })
 
-dbRouter.delete('/main/:taskName', dbControllers.editTodoTask, (req, res, next) => {
+
+//   const outgoing = {
+//     // username: userID,
+//     newTask: userInput
+
+// }
+// fetch ('http://localhost:3000/main', {
+//     method: 'PUT',
+//     headers: {'Content-Type': 'application/json'},
+//     body: outgoing
+// })
+//   .then (res =>{
+//     console.log(res)
+//   })
+
+
+
+dbRouter.delete('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
   return res.status(200).json(res.locals.taskName);
 })
 
