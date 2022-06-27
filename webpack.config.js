@@ -17,6 +17,7 @@ const config = {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
+        
       },
       {
         test: /\.css$/,
@@ -41,10 +42,10 @@ const config = {
         include: /\.module\.css$/
       },
       {
-        test: /\.png$/,
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'url-loader?limit=100000',
             options: {
               mimetype: 'image/png'
             }
@@ -61,8 +62,6 @@ const config = {
       }
     ]
   },
-  plugins: [
-  ],
   resolve: {
     extensions: ['', '.jsx','.js','.json', '.css']
   },
@@ -73,10 +72,12 @@ const config = {
     port: 8080,
     hot: true,
     liveReload: true,
-    proxy: {
-      '/': 'http://localhost:3000'
-    }
-  }
+    open:true
+    // proxy: {
+    //   '/': 'http://localhost:3000'
+    // }
+  },
+  target: 'web'
 };
 
 module.exports = config;
