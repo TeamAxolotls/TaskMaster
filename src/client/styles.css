@@ -7,6 +7,10 @@ body{
     background-color: #e3e3e3;
 }
 
+button:hover{
+    cursor:pointer;
+}
+
 /* Side Navigation  */
 
 .sidenav {
@@ -55,10 +59,11 @@ body{
 
   .topnav{
     background: linear-gradient(45deg,rgb(58, 58, 58), rgb(93, 93, 93));
-
+    
     margin-left: 280px;
     height: 90px;
 
+    
   }
   #user-section{
     margin-right: 35px;
@@ -186,4 +191,66 @@ body{
 }
 .create-task{
     margin-left: 293px;
+}
+
+/* Subtask Styles */
+#subtask-completed-button{
+    border: none;
+    background: none;
+}
+.sub-tasks li{
+    list-style: none;
+}
+.subtask-container{
+    display: grid;
+    grid-template-columns: 625px 70px;
+    line-height: 33px;
+
+}
+.subtask-item{
+    padding-left: 60px;
+}
+#add-subtask-container{
+    display: grid;
+    grid-template-columns: 626px 70px;
+    align-items: center;
+    padding-bottom: 25px;
+    padding-top: 2px;
+}
+#add-subtask-button{
+    border:none;
+    background: none;
+    grid-column: 2;
+
+}
+#subtask-input-div{
+    grid-column: 1;
+    padding-left: 60px;
+    display: inline-block;
+    width: 600px;
+    line-height: 20px;
+
+}
+#subtask-input-field{
+   
+    font-size: 16px;
+    padding-left: 8px;
+    border-radius: 5px;
+    border: 2px solid rgb(215, 215, 215);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 90%;
+    /* border: none; */
+}
+#subtask-input-field:focus{
+    outline: none;
+}
+/* #subtask-input-field:active{
+    outline: none;
+} */
+#submit-subtask-button{
+    margin-left: -30px;
+    padding-top: 2px;
+    border: none;
+    background: none;
 }
