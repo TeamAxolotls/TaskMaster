@@ -1,20 +1,27 @@
-// require in the schema for the todo list. 
-const todoModel = require('../../client/TodoTask.js');
-
+// require in the schema for the database. 
+const dbModel = require('../../client/TodoTask.js');
 
 
 // login controller
 
-const LoginController = {
+const loginController = {
     //create new user in the database
-    //their info will be sent in the req ody 
+    //their info will be sent in the req body 
     //this should send the created user 
     createUser(req, res, next) {
       const {username, password} = req.body;
-      user.create({ username, password })
+      dbModel.create({ username, password })
       .then((data) => {
           res.locals.user = data;
           return next();
         })
+        .catch(err => {
+          return next({
+            log: 'ERROR',
+            message: 'Unable to create new user. Make sure you entered a valid username and password.'
+          })
+        })
     }
 }
+
+module.exports = loginController;
