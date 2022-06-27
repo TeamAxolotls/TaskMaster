@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const config = {
@@ -72,10 +73,10 @@ const config = {
     port: 8080,
     hot: true,
     liveReload: true,
-    open:true
-    // proxy: {
-    //   '/': 'http://localhost:3000'
-    // }
+    open:true,
+    proxy: {
+      '/main': 'http://localhost:3000'
+    }
   },
   target: 'web'
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/server/server.js",
-    "dev": "webpack-dev-server",
+    "dev": "webpack serve --open",
     "build": "webpack"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.18.0",
+    "html-webpack-plugin": "^5.5.0",
     "lodash-webpack-plugin": "^0.11.6",
     "sass-loader": "^13.0.1",
     "style-loader": "^3.3.1",

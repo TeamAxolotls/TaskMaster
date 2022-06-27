@@ -12,14 +12,15 @@ const CreateTask = () => {
 };
 
 const enterTask = () =>{
-    const userInput = document.getElementById('createInput').value;
+    const userInput = document.getElementById('create-input').value;
     // const userID = document.getElementById('')
-    console.log(userInput)
+    // console.log(userInput)
     const outgoing = {
         // username: userID,
         newTask: userInput
     }
-    fetch ('http://localhost:3000', {
+    console.log(outgoing)
+    fetch ('http://localhost:3000/main', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: outgoing

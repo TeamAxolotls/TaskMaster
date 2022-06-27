@@ -6,8 +6,6 @@ const mongoose = require('mongoose');
 // const { db } = require('../../client/TodoTask.js');
 
 
-// does this go here or in main?
-// mongoose.connect('');
 
 // import controllers for getting data from mongo db. 
 const dbControllers = require('../controllers/dbControllers.js');

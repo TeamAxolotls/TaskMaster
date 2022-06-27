@@ -29,17 +29,28 @@ app.get('/', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../../dist/index.html'));
 })
 
+app.use('/bundle.js', (req, res)=>{
+  res.status(200).sendFile(path.resolve(__dirname, '../../dist/bundle.js'))
+})
+
+app.use('/styles.css', (req, res)=>{
+  res.status(200).sendFile(path.resolve(__dirname, '../client/style.css'))
+})
+
 app.use('/main', dbRouter);
 
 app.use('/login', loginRouter);
 
-app.use('../src/client/styles.css', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../client/styles.css'));
-})
+// app.use('../src/client/styles.css', (req, res) => {
+//   res.status(200).sendFile(path.resolve(__dirname, '../client/styles.css'));
+// })
 
 app.use((req, res) => {
   res.sendStatus(404);
 })
+
+//not sure if this was needed. 
+app.use(express.urlencoded({ extended: true }));
 
 
 app.listen(3000, ()=>{console.log(`listening on port 3000`)});

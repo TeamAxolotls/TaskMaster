@@ -26,24 +26,24 @@ const manageToDo = {
     //           pointer: Number,
     //           tasks: Array,
     //       },
+    //     ]
+    // })
     // Q: how to destructure nested items in db?
     // A: destructure just mimics object structure. 
-    const { username, password, task: [ { taskItem, highlight, identifier} ] } = req.body;
+    // const { username, password, task: [ { taskItem: taskName, highlight: starred, identifier} ] } = req.body;
+    const {task} = req.body;
     // nested destructure test: WORKING
-    // console.log(type)
-    // console.log(highlight)
-    // console.log(identifier)
 
     // create new task in database.
     // access properties on taskItem in database. 
-    dbModel.create({ "username": username, "password": password})
+    dbModel.create({ task: [ { taskItem: taskName, highlight: starred, identifier} ]})
     .then((data) => {
       res.locals.todoTask = data;
       return next();
     })
     .catch((err => {
       return next({
-        log: 'ERROR: createTodo', 
+        log: 'ERROR: createTodo',
         message: 'Unable to create new todo list.'
       })
     }));
@@ -59,7 +59,7 @@ const manageToDo = {
   getTodoAll(req, res, next) {
     // destructure all items in tasks array that were received on req.params.
     // do we need to spread these? 
-    const { task: todolist } = req.body;
+    const { task: todolist } = req.params;
     // retrieve all task items, so use find
     // do we want to retrieve individually so that whole list doesn't rerender every time?
     dbModel.find({ todolist })
@@ -124,6 +124,8 @@ const manageToDo = {
       })
   }
 }
+
+// manageToDo.createTodoTask();
 
 module.exports = manageToDo;
 
