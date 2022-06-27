@@ -3,9 +3,19 @@ import uncompleted from "../img/circle.png";
 import completed from "../img/circlegreencheck.png"
 import completedSub from "../img/circleyellowcheck.png"
 import add from "../img/add-symbol.png"
+import star from "../img/star4.png"
+import star2 from "../img/star3.png"
+import flag from "../img/flag.png"
+import flag2 from "../img/grey-flag.png"
+import tag from "../img/tag-purple-2.png"
+import tag2 from "../img/grey-tag.png"
+
 import { useState } from "react";
 const checks = {uncompleted, completed}; 
 const subChecks = {uncompleted, completedSub};// These are the unchecked and checked circles
+const flags = {flag, flag2};
+const tags = {tag, tag2};
+const stars = {star, star2};
 
 const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1, completed: false},
 {taskItem: "Pack for vacation to SF", highlight: false, identifier: 2, completed: false},
@@ -102,11 +112,29 @@ const TaskList = (props)=> {
         </div>
     )
     ////////////////////////////////////////////////////////////////////
+    // Functions for Priority, Tags, and Flag icons
+    const [priority, setPriority] = useState(stars.star2);
+    function prioritySet() {
+        priority === stars.star2 ? setPriority(stars.star) : setPriority(stars.star2);
+    }
 
+    const [tag, setTag] = useState(tags.tag2);
+    function tagSet() {
+        tag === tags.tag2 ? setTag(tags.tag) : setTag(tags.tag2);
+    }
+
+    const [flag, setFlag] = useState(flags.flag2);
+    function flagSet() {
+        flag === flags.flag2 ? setFlag(flags.flag) : setFlag(flags.flag2);
+    }
 
         return (
             <div className="tasks-container">   
-                <div className="main-task">{obj.taskItem}<button id="check-circle" 
+                <div className="main-task">{obj.taskItem}
+                <button id="priority-button" onClick={prioritySet}><img src={priority} height="26px"></img></button>
+                <button id="tag-button" onClick={tagSet}><img src={tag} height="24px" id="tag-button-image"></img></button>
+                <button id="flags-button" onClick={flagSet}><img src={flag} height="22px"></img></button>
+                <button id="check-circle" 
                 onClick={() => complete()} key={obj.identifier}>
                     <img src={check} height="30px" id="check-button"></img></button>        
                 </div>

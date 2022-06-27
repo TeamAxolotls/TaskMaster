@@ -11,6 +11,9 @@ button:hover{
     cursor:pointer;
 }
 
+#testing123{
+    margin-left: 300px;
+}
 /* Side Navigation  */
 
 .sidenav {
@@ -145,7 +148,7 @@ button:hover{
 }
 .main-task{
     display: grid;
-    grid-template-columns: 600px 70px;
+    grid-template-columns: 503px 37px 37px 37px 37px ;
     padding: 20px 15px 5px 25px;
     font-weight:500;
     line-height: 33px;
@@ -253,4 +256,15 @@ button:hover{
     padding-top: 2px;
     border: none;
     background: none;
+}
+
+
+/* Task Buttons for Flagging and Prioritizing  */
+
+.main-task button{
+    border: none;
+    background: none;
+}
+#tag-button-image{
+padding-right: 4px;
 }
