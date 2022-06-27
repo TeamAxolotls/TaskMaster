@@ -19,7 +19,7 @@ const enterTask = () =>{
         // username: userID,
         newTask: userInput
     }
-    fetch ('http://localhost:3000', {
+    fetch ('http://localhost:3000/home', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: outgoing
