@@ -33,7 +33,7 @@ const TaskContainer = () => {
         <div>
 
             <MainTask/>
-            <TaskList task={task} subTask={subTask}/>
+            <TaskList task={task} subTask={subTask} setTask={setTask}/>
         </div>
     )
 
