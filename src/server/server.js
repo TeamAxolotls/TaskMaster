@@ -2,13 +2,22 @@ const express = require ('express');
 const path = require ('path');
 const webpack = require('webpack')
 const fs = require ('fs');
-// const db = require ('./')
+const dbRouter = require('./routes/dbRoutes.js');
+const mongoose = require('mongoose');
 
 // initialize port to localhost 3000
 const port = 3000;
 
+// do we need to routes from routes folder here? 
+// do we need to connect to mongoose database here or in routes files? 
+
 //initialize server
 const app = express();
+
+mongoose.connect('mongodb+srv://dennishly:awkward123!@cluster0.ubkvk.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once('open', () => {
+  console.log('Connected to Database');
+});
 
 // send get request to index.html
 
