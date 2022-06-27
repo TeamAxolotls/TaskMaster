@@ -3,42 +3,52 @@ const dbModel = require('../../client/TodoTask.js');
 // require mongoose
 const mongoose = require('mongoose');
 
-
-
 const manageToDo = {
 
   // parent toDo controller
   // it would be nice to have one crud method for lists, list items, and sub lists and sub list items.
   // for now, making seperate methods. 
   createTodoTask(req, res, next) {
-    // const todoTaskSchema = new mongoose.Schema({
-    //   username: String,
-    //   password: String,
-    //   task: [
-    //       {
-    //               taskItem: String,
-    //               highlight: {type: Boolean, default: false},
-    //               identifier: Number,
+  //   const todoTaskSchema = new mongoose.Schema({
+  //     username: String,
+  //     password: String,
+  //     task: [
+  //         {
+  //                 taskItem: String,
+  //                 highlight: {type: Boolean, default: false},
+  //                 identifier: Number,
           
-    //       }],
-    //   subTask: [
-    //       {
-    //           pointer: Number,
-    //           tasks: Array,
-    //       },
-    //     ]
-    // })
+  //         }],
+  //     subTask: [
+  //         {
+  //             pointer: Number,
+  //             tasks: Array,
+  //         },
+  //       ]
+  //   })
     // Q: how to destructure nested items in db?
     // A: destructure just mimics object structure. 
     // const { username, password, task: [ { taskItem: taskName, highlight: starred, identifier} ] } = req.body;
-    const {task} = req.body;
+    const {taskName} = req.body;
+    let identifier = 1
+
+
+  //   const outgoing = {
+  //     // username: userID,
+  //     task: userInput
+  // }
+
+
+    // const {task} = req.body;
     // nested destructure test: WORKING
 
     // create new task in database.
     // access properties on taskItem in database. 
-    dbModel.create({ task: [ { taskItem: taskName, highlight: starred, identifier} ]})
+    // dbModel.create({ taskName, starred, identifier })
+    dbModel.create({ task: [{taskItem: taskName, identifier: identifier}], subTask: [{pointer: identifier, tasks: []}] })
     .then((data) => {
       res.locals.todoTask = data;
+      console.log('DATA:', data)
       return next();
     })
     .catch((err => {
@@ -57,12 +67,15 @@ const manageToDo = {
 
   // retrieve entire todo list for user
   getTodoAll(req, res, next) {
+
+    const { taskList } = req.body;
+    console.log(req.body)
     // destructure all items in tasks array that were received on req.params.
     // do we need to spread these? 
-    const { task: todolist } = req.params;
+    // const { task: [{taskItem: taskName, identifier: identifier}], subTask: [{pointer, tasks: []}]}  = req.body;
     // retrieve all task items, so use find
     // do we want to retrieve individually so that whole list doesn't rerender every time?
-    dbModel.find({ todolist })
+    dbModel.findOne()
     // do we need to parse this data?
     .then((data) => {
       // store data on response.locals object.
@@ -81,9 +94,7 @@ const manageToDo = {
     // destructure task
     //taskName is alias for taskItem
     // <<<!!!>>> make sure taskName is alias variable name that points to edited value, not existing property on taskItem. 
-    const { task: [ { taskItem: taskName } ] } = req.body;
-
-    
+    const { task } = req.body;
     
     dbModel.findOneAndUpdate({ task: [{ taskItem: taskName } ]}, {task: [ { taskItem: newTask }]},
       { new: true })

@@ -22,7 +22,8 @@ const testArr = ['Look up current value of computer', 'Create ad and post to cra
 const TaskList = (props)=> {
     // task={task} subTask={subTask} setTask={setTask}
     
-    const {setTask} = props;
+    // const {setTask, task, subTask} = props;
+    // const subtask = subTask;
     
         // console.log(subtasksDivs)
     
