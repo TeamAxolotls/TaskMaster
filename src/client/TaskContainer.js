@@ -1,5 +1,9 @@
-import react, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import MainTask from './MainTask'
+import TaskList from './TaskList';
+import { useState } from 'react';
+import CreateTask from './MainTask';
+
 
 const TaskContainer = () => { 
 
@@ -20,8 +24,9 @@ const TaskContainer = () => {
 
     return (
         <div>
+
             <MainTask/>
-            <TastList task={task} subTask={subTask}/>
+            <TaskList task={task} subTask={subTask} setTask={setTask}/>
         </div>
     )
 

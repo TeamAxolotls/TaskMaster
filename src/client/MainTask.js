@@ -1,11 +1,11 @@
 import React from "react";
 
-const TaskMaster = () => {
+const CreateTask = () => {
       
     return (
-        <div>
-            <input id='createInput'></input>
-            <button id='createNew' onClick={enterTask}>Create New</button>
+        <div className="create-task">
+            <input id='create-input'></input>
+            <button id='create-new' onClick={enterTask}>Create New</button>
         </div>
     )
 
@@ -30,4 +30,4 @@ const enterTask = () =>{
 }
 
 
-export default TaskMaster;
+export default CreateTask;

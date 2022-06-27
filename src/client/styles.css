@@ -1,29 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 body{
     margin: 0;
     font-family: 'Roboto';
     background-color: #e3e3e3;
 }
+
+/* Side Navigation  */
+
 .sidenav {
     height: 100%;
-    width: 300px;
+    width: 280px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #343434, #535353);
+    /* background: linear-gradient(40deg, #343434, #535353); */
+    background-color: rgb(58,58,58);
     overflow-x: hidden;
-    padding-top: 22px;
     font-weight: 300;
-    /* display: flex; */
   }
 
   .sidenav a {
-    padding: 6px 6px 40px 32px;
+    padding: 24px 20px 24px 32px;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 17px;
     color: #e1e1e1;
     display: flex;
     align-items: center;
@@ -33,32 +35,155 @@ body{
     color: #efefef;
   }
 
-  .user-nav{
-    padding: 50px 0px 40px 0px;
+  .logo{
+    padding: 9px 0px 0px 0px;
     display: flex;
-  
+    align-items: center;
+    margin-left: 30px;
+
+  }
+
+  #main-logo{
+    font-family: 'Alata', sans-serif;
+    padding-left: 10px;
+
+    font-size: 24px;
+    color: rgb(243, 242, 242);
+  }
+
+  /* Top Navigation */
+
+  .topnav{
+    background: linear-gradient(45deg,rgb(58, 58, 58), rgb(93, 93, 93));
+
+    margin-left: 280px;
+    height: 90px;
+
+  }
+  #user-section{
+    margin-right: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 22px;
+  }
+  #grid{
+    padding-right: 20px;
   }
 
   #user-photo{
     display: inline;
     border-radius: 100%;
   }
-  #username{
-    display: inline;
-    padding: 6px 70px 16px 32px;
-    font-size: 21px;
-    color:  #e1e1e1;
-  }
+  
 
-  #priority{
-    margin-left: 100px;
-  }
-  #folder{
-    margin-left: 92px;
-  }
-  #tag{
+
+  /* sidebar nav focus and hover effects */
+#priority{
+    margin-left: 101px;
+}
+#folder{
+    margin-left: 112px;
+}
+#tag{
     margin-left: 120px;
-  }
-  #flag{
-    margin-left: 94px;
-  }
+}
+#flag{
+    margin-left: 99px;
+}
+#completed-logo{
+    margin-left: 119px;
+}
+
+#tasks-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tasks-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#priority-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#priority-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tags-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tags-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#flagged-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#flagged-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#done-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#done-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+
+
+/* Task Container  */
+
+.tasks-container{
+    margin-left: 293px;
+    margin-top: 14px;
+    width: 700px;
+    height: auto;
+    background: rgb(241, 241, 241);
+    border-radius: 7px;
+
+}
+.main-task{
+    display: grid;
+    grid-template-columns: 600px 70px;
+    padding: 20px 15px 5px 25px;
+    font-weight:500;
+    line-height: 33px;
+    font-size: 18px;
+    /* align-content: center; */
+}
+#check-circle{
+    border: none;
+    background-color: rgb(241, 241, 241);
+    /* padding-bottom: 10px; */
+}
+ 
+.create-task{
+    margin-top: 11px;
+    display: flex;
+}
+#create-input{
+    width: 587px;
+    height: 30px;
+    font-size: 16px;
+    border: solid 2px rgb(215, 215, 215);
+    border-radius: 10px;
+    margin-right: 10px;
+    padding-left:9px;
+}
+
+#create-new{
+    border: none;
+    color:rgb(236, 236, 236);
+    padding: 9px;
+    background: linear-gradient(145deg, rgb(171,196,122), rgb(159, 182, 114));
+    border-radius: 10px;
+    /* padding-top: 12px; */
+}
+#create-new:hover{
+    cursor: pointer;
+    /* color:rgb(171,196,122);
+    border: 2px solid rgb(171,196,122); */
+    background: rgb(135, 154, 97);
+}
+#check-button:hover{
+    cursor: pointer;
+}
+.create-task{
+    margin-left: 293px;
+}
