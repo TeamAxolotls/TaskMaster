@@ -1,6 +1,9 @@
-import React, { useEffect, useState} from 'react';
-import MainTask from './MainTask';
-// import TaskList from './TaskList';
+import React, { useEffect } from 'react';
+import MainTask from './MainTask'
+import TaskList from './TaskList';
+import { useState } from 'react';
+import CreateTask from './MainTask';
+
 
 const TaskContainer = () => { 
 
@@ -9,11 +12,10 @@ const TaskContainer = () => {
     //set a sub-task state
     const [subTask, setSubTask] = useState('');
 
-
     //fetch for data from database, then use it to set state
     useEffect(() => {
 
-        fetch ('http://localhost:3000/home') //get all data from database
+        fetch ('http://localhost:3000/main') //get all data from database
           .then (res =>{
             console.log(res)
             return res.json()
@@ -29,8 +31,9 @@ const TaskContainer = () => {
 
     return (
         <div>
+
             <MainTask/>
-            {/* <TaskList task={task} subTask={subTask}/> */}
+            <TaskList task={task} subTask={subTask}/>
         </div>
     )
 

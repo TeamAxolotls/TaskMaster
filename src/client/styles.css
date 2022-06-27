@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 body{
     margin: 0;
@@ -8,22 +8,23 @@ body{
 }
 .sidenav {
     height: 100%;
-    width: 300px;
+    width: 280px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #343434, #535353);
+    /* background: linear-gradient(40deg, #343434, #535353); */
+    background-color: rgb(58,58,58);
     overflow-x: hidden;
-    padding-top: 22px;
+    /* padding-top: 22px; */
     font-weight: 300;
     /* display: flex; */
   }
 
   .sidenav a {
-    padding: 6px 6px 40px 32px;
+    padding: 24px 20px 24px 32px;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 17px;
     color: #e1e1e1;
     display: flex;
     align-items: center;
@@ -33,32 +34,154 @@ body{
     color: #efefef;
   }
 
-  .user-nav{
-    padding: 50px 0px 40px 0px;
+  .logo{
+    padding: 9px 0px 0px 0px;
     display: flex;
-  
+    align-items: center;
+    margin-left: 30px;
+    /* background-color: #343434; */
+  }
+
+  #main-logo{
+    font-family: 'Alata', sans-serif;
+    padding-left: 10px;
+    /* margin-left: 10px; */
+    font-size: 24px;
+    color: rgb(243, 242, 242);
+  }
+  /* background: linear-gradient(100deg, #595959, #343434); */
+  .topnav{
+    background: linear-gradient(45deg,rgb(58, 58, 58), rgb(93, 93, 93));
+    /* width: auto;     */
+    margin-left: 280px;
+    height: 90px;
+    /* padding-top: 20px; */
+  }
+  #user-section{
+    /* padding: 0px 0px 400px 0px; */
+    /* margin-left: 300px; */
+    margin-right: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 22px;
+  }
+  #grid{
+    padding-right: 20px;
   }
 
   #user-photo{
     display: inline;
     border-radius: 100%;
   }
-  #username{
+  /* #username{
     display: inline;
     padding: 6px 70px 16px 32px;
-    font-size: 21px;
+    font-size: 20px;
     color:  #e1e1e1;
-  }
+  } */
 
   #priority{
-    margin-left: 100px;
+    margin-left: 101px;
   }
   #folder{
-    margin-left: 92px;
+    margin-left: 112px;
   }
   #tag{
     margin-left: 120px;
   }
   #flag{
-    margin-left: 94px;
+    margin-left: 99px;
   }
+  #completed-logo{
+    margin-left: 119px;
+  }
+
+  /* sidebar nav focus and hover effects */
+#tasks-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tasks-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#priority-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#priority-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tags-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#tags-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#flagged-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#flagged-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#done-div:hover{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+#done-div:focus{
+    background: linear-gradient(200deg, rgb(79, 79, 79),rgb(65, 65, 65));
+}
+
+
+
+  .tasks-container{
+    margin-left: 293px;
+    margin-top: 14px;
+    width: 700px;
+    height: auto;
+    background: rgb(241, 241, 241);
+    border-radius: 11px;
+  }
+  .main-task{
+    /* margin: 30px; */
+    display: grid;
+    grid-template-columns: 600px 70px;
+    padding: 20px;
+    font-weight:500;
+  }
+  #check-circle{
+    border: none;
+    background-color: rgb(241, 241, 241);
+  }
+ 
+.create-task{
+    margin-top: 11px;
+    display: flex;
+}
+#create-input{
+    width: 593px;
+    height: 30px;
+    font-size: 16px;
+    border: solid 2px rgb(215, 215, 215);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+#create-new{
+    border: none;
+    color:rgb(236, 236, 236);
+    padding: 9px;
+    background: linear-gradient(145deg, rgb(171,196,122), rgb(159, 182, 114));
+    border-radius: 10px;
+    /* padding-top: 12px; */
+}
+
+#create-new:hover{
+    cursor: pointer;
+    /* color:rgb(171,196,122);
+    border: 2px solid rgb(171,196,122); */
+    background: rgb(135, 154, 97);
+}
+#check-button:hover{
+    cursor: pointer;
+}
+
+.create-task{
+    margin-left: 293px;
+}
