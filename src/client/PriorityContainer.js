@@ -6,12 +6,12 @@ const PriorityContainer = (props)=>{
     let priorityTasks = []
 
 
-    let highlightTask = task.filter(individualTask => individualTask.highlight===true);
+    // let highlightTask = task.filter(individualTask => individualTask.highlight===true);
 
-    highlightTask.forEach(task=>{
-       let highlightSubs = subTask.filter(sub => task.identifier === sub.pointer);
-       
-    });
+    // highlightTask.forEach(task=>{
+    //    let highlightSubs = subTask.filter(sub => task.identifier === sub.pointer);
+
+    // });
 
     return (
         <div>
