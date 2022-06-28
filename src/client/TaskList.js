@@ -17,14 +17,14 @@ const flags = {flag, flag2};
 const tags = {tag, tag2};
 const stars = {star, star2};
 
-const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1, completed: false},
-{taskItem: "Pack for vacation to SF", highlight: false, identifier: 2, completed: false},
-{taskItem: "Study for graduation assessment", highlight: false, identifier: 3, completed: false},{taskItem: "Sell my laptop", highlight: false, identifier: 1, completed: false},
-{taskItem: "Pack for vacation to SF", highlight: false, identifier: 2, completed: false},
-];
-const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Create ad and post to craigslist']}, 
-    {pointer: 2, tasks: ["Do laundry and choose clothes", "Go shopping for travel items", "Buy plane ticket"]},
-    {pointer: 3, tasks: ["Study redux and react", "Go over lecture slides", "Review daily hack hour algos"]}];
+// const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1, completed: false},
+// {taskItem: "Pack for vacation to SF", highlight: false, identifier: 2, completed: false},
+// {taskItem: "Study for graduation assessment", highlight: false, identifier: 3, completed: false},{taskItem: "Sell my laptop", highlight: false, identifier: 1, completed: false},
+// {taskItem: "Pack for vacation to SF", highlight: false, identifier: 2, completed: false},
+// ];
+// const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Create ad and post to craigslist']}, 
+//     {pointer: 2, tasks: ["Do laundry and choose clothes", "Go shopping for travel items", "Buy plane ticket"]},
+//     {pointer: 3, tasks: ["Study redux and react", "Go over lecture slides", "Review daily hack hour algos"]}];
 
 const testArr = ['Look up current value of computer', 'Create ad and post to craigslist'];
 
@@ -34,10 +34,11 @@ const testArr = ['Look up current value of computer', 'Create ad and post to cra
 // Will want to deconstruction task, and subtask
 
 const TaskList = (props)=> {
-    // task={task} subTask={subTask} setTask={setTask}
+
+    // <TaskList task={task} subTask={subTask} setTask={setTask}/>
     
-    // const {setTask, task, subTask} = props;
-    // const subtask = subTask;
+    const {setTask, task, subTask} = props;
+    const subtask = subTask;
     
         // console.log(subtasksDivs)
     

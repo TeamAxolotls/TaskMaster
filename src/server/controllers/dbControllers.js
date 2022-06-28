@@ -90,26 +90,27 @@ const manageToDo = {
     })
   },
 
-  editTodoTask(req, res, next) {
-    // destructure task
-    //taskName is alias for taskItem
-    // <<<!!!>>> make sure taskName is alias variable name that points to edited value, not existing property on taskItem. 
-    const { task } = req.body;
+  // editTodoTask(req, res, next) {
+  //   // destructure task
+  //   //taskName is alias for taskItem
+  //   // <<<!!!>>> make sure taskName is alias variable name that points to edited value, not existing property on taskItem. 
+  //   const { task } = req.body;
     
-    dbModel.findOneAndUpdate({ task: [{ taskItem: taskName } ]}, {task: [ { taskItem: newTask }]},
-      { new: true })
-      .then((data) => {
-          // send task to be updated on response locals object. 
-          res.locals.taskName = data;
-          return next();
-      })
-    .catch(err => {
-      return next({
-        log: 'ERROR: editTask',
-        message: 'Failed to edit task.'
-      })
-    })
-  },
+  //   dbModel.findOneAndUpdate({ task: [{ taskItem: taskName } ]}, {task: [ { taskItem: newTask }]},
+  //     { new: true })
+  //     .then((data) => {
+  //         // send task to be updated on response locals object. 
+  //         res.locals.taskName = data;
+  //         return next();
+  //     })
+  //   .catch(err => {
+  //     return next({
+  //       log: 'ERROR: editTask',
+  //       message: 'Failed to edit task.'
+  //     })
+  //   })
+  // },
+  
     // // update task in database
     // dbModel.updateOne({ taskItem: taskName })
     // .then((data) => {
@@ -117,23 +118,23 @@ const manageToDo = {
     //   res.locals.taskName = data;
     //   return next();
     // })
-  delTodoTask(req, res, next) {
+  // delTodoTask(req, res, next) {
 
-    const { task: [ { taskItem: taskName } ] } = req.body;
+  //   const { task: [ { taskItem: taskName } ] } = req.body;
 
-    dbModel.deleteOne({ taskName })
-      .then((data) => {
-        // send taskName on response locals object.
-        res.locals.taskName = data;
-        return next();
-      })
-      .catch(err => {
-        next({
-          log: 'ERROR: delTodoTask',
-          message: 'Failed to delete task.'
-        })
-      })
-  }
+  //   dbModel.deleteOne({ taskName })
+  //     .then((data) => {
+  //       // send taskName on response locals object.
+  //       res.locals.taskName = data;
+  //       return next();
+  //     })
+  //     .catch(err => {
+  //       next({
+  //         log: 'ERROR: delTodoTask',
+  //         message: 'Failed to delete task.'
+  //       })
+  //     })
+  // }
 }
 
 // manageToDo.createTodoTask();

@@ -21,13 +21,14 @@ dbRouter.post('/', dbControllers.createTodoTask, (req, res, next) => {
 // what is the right uri to retrieve tasks for a specific user?
 // would it still be user or would it be todolist?
 // might be /main/user/:todolist
+
 dbRouter.get('/', dbControllers.getTodoAll, (req, res, next) => {
   return res.status(200).json(res.locals.todolist);
 })
 
-dbRouter.put('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
-  return res.status(200).json(res.locals.taskName);
-  })
+// dbRouter.put('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
+//   return res.status(200).json(res.locals.taskName);
+//   })
 
 
 //   const outgoing = {
@@ -46,8 +47,8 @@ dbRouter.put('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
 
 
 
-dbRouter.delete('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
-  return res.status(200).json(res.locals.taskName);
-})
+// dbRouter.delete('/:taskName', dbControllers.editTodoTask, (req, res, next) => {
+//   return res.status(200).json(res.locals.taskName);
+// })
 
 module.exports = dbRouter;
