@@ -5,21 +5,30 @@ const todoTaskSchema = new mongoose.Schema({
     password: String,
     task: [
         {
-            taskItem: /*name of task*/ { 
-                type: String, 
-                highlight: Boolean, 
-                identifier: Number },
-            subTask: [
-                {
-                    subTaskItem: /*name of subtask */ { 
-                        pointer: Number,
-                        type: String, 
-                        tasks: Array },
-                }],
+                taskItem: String,
+                highlight: {type: Boolean, default: false},
+                identifier: Number,
+        
         }],
+    subTask: [
+        {
+            pointer: Number,
+            tasks: Array,
+        },
+
+
+        // const task = [{taskItem: "Sell my laptop", highlight: false, identifier: 1},
+        // {taskItem: "Pack for vacation to SF", highlight: false, identifier: 2},
+        // {taskItem: "Study for graduation assessment", highlight: false, identifier: 3},
+        // ];
+        // const subtask = [{pointer: 1, tasks:['Look up current value of computer', 'Create ad and post to craigslist']}, 
+        // {pointer: 2, tasks: ["Do laundry and choose clothes", "Go shopping for travel items", "Buy plane ticket"]}];
+
+
+    ]
 })
 
 const todo = mongoose.model('todo', todoTaskSchema);
 
-module.exports = mongoose.model('TodoTask, todoTaskSchema');
+module.exports = todo;
 
